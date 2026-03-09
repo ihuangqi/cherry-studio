@@ -77,7 +77,7 @@ export class MessagesService {
         }
 
         const content: unknown = message.content
-        if (content === undefined || content === null) {
+        if (message.role !== 'assistant' && (content === undefined || content === null)) {
           errors.push(`messages[${index}].content is required`)
           return
         }

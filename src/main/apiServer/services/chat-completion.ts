@@ -141,7 +141,7 @@ export class ChatCompletionService {
         if (!message.role) {
           errors.push(`Message ${index}: role is required`)
         }
-        if (!message.content) {
+        if (message.role !== 'assistant' && !message.content) {
           errors.push(`Message ${index}: content is required`)
         }
       })
